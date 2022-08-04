@@ -1,3 +1,32 @@
-<h1>Dashboard</h1>
-<p> Welcome <%= user.name %></p>
-<a href="/users/logout">Logout</a>
+
+<!-- <p> Welcome </p> -->
+<nav>
+    <a href="#user"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABEUlEQVRIie3UMUoDYRDF8Z8psqUpLBRrBS+gx7ATD6E5iSjeQQ/gJUzEwmChnZZaKZiQ0ljsLkhQM5/5Agr74DX7DfOfgZ1Hoz+qAl30Marcx2H1thCtY4DJN76parKqmAH9DM+6eTcArX2QE3yVAO7lBA8TwMNIw6UgeJI46My+rWCjUQL0LVIUBd8lgEO1UfBZAvg8oXamCuWNRu64nRNMmUo/wReSXLXayoDoKc9miMvqW/ZNG2VRNLla2MYudrCFTvX2intlnl/gGu/zDraGYzyLZ/UTjrD6G2AHpxgnAKc9xgmWo9BNPM4BnPYDNiLg24zQ2oNpyFdZvRKZLlGhnvvKPzXXti/Yy7hEo3+iD9EHtgdqxQnwAAAAAElFTkSuQmCC"><i class="far fa-user"></i></a>
+    <a href="#second"><i class="fas fa-briefcase"></i></a>
+    <a href="#third"><i class="far fa-file"></i></a>
+    <a href="/user/logout"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAsklEQVRIie2WMQ7CMAxFH70DiF6FlYVybEYKCwzsDRNnQCoDjYTaqqROYiTkL3mIlfxnRXESMP1Ie8ABrTAcUEnAMVAfTQho0Ru3kmoDfAcqEoFmy8B/BT4AJ2A1NSm2lXx86tjlrlPwHOAlcOnyN6DUAgfBQ0w3YxXP9KklhyvLgdTa6rUG+Cs0F7hmpJ00LpAncAa2wMMn7Vk0sBr4nsDTSRZVvH+J0v5tgF1k4aa0egGdNMkISBZ3YAAAAABJRU5ErkJggg=="><i class="far fa-address-card"></i></a>
+  </nav>
+ <div class= 'container'> 
+   <section id= 'user'>
+     <h1>User</h1>
+     <ul><h3>Username: </h3><h4><%= user.name %></h4></ul>
+     <ul><h3>User email: </h3><h4><%= user.email %></h4></ul>
+     <ul><h3>Date of creation: </h3><h4><%= user.date %></h4></ul>
+   </section>
+   
+   <section id= 'second'>
+     <h1>Second</h1>
+   </section>
+   
+  <section id= 'third'>
+    <h1>Third</h1>
+   </section>
+   
+  <section id= 'fourth'>
+    <h1>Logout</h1>
+   </section>
+   <div id="clock">
+    <iframe src="https://free.timeanddate.com/clock/i8g0tfxd/n1474/fn6/fs16/fc0ff/tct/pct/ftb/bas2/bat1/bacfff/pa8/tt0/tw1/th1/ta1/tb4" frameborder="0" width="500" height="60" allowtransparency="true"></iframe>
+  </div>
+ </div>
+
