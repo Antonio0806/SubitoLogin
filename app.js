@@ -21,7 +21,7 @@ app.use(expressEjsLayout);
 app.use(express.urlencoded({extended : false}));
 //express session
 app.use(session({
-    secret : 'secret',
+    secret : 'urmum',
     resave : true,
     saveUninitialized : true
 }));
