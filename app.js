@@ -7,13 +7,13 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require("passport");
 
+var md5 = require("blueimp-md5")
 //passport config:
 require('./config/passport')(passport)
 //mongoose
 mongoose.connect('mongodb://localhost/accounts',{useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('Connected to accoounts database.'))
 .catch((err)=> console.log(err));
-
 //EJS
 app.set('view engine','ejs');
 app.use(expressEjsLayout);
@@ -36,7 +36,7 @@ app.use((req,res,next)=> {
     })
     
 //Routes
-app.use('/',require('./routes/index'));
-app.use('/users',require('./routes/users'));
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 
 app.listen(3000); 
