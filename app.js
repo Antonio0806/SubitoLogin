@@ -11,7 +11,7 @@ const passport = require("passport");
 require('./config/passport')(passport)
 //mongoose
 mongoose.connect('mongodb://localhost/accounts',{useNewUrlParser: true, useUnifiedTopology : true})
-.then(() => console.log('connected,,'))
+.then(() => console.log('Connected to accoounts database.'))
 .catch((err)=> console.log(err));
 
 //EJS

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const md5converter = require('../md5hash')
 const UserSchema  = new mongoose.Schema({
   name :{
       type  : String,
@@ -12,6 +13,10 @@ password :{
     type  : String, 
     required : true
 } ,
+emailmd5 :{
+    type  : String,
+    required  :  true
+},
 date :{
     type : Date,
     default : Date.now
