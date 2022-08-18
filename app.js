@@ -11,7 +11,7 @@ var md5 = require("blueimp-md5")
 //passport config:
 require('./config/passport')(passport)
 //mongoose
-mongoose.connect('mongodb://localhost/accounts',{useNewUrlParser: true, useUnifiedTopology : true})
+mongoose.connect('mongodb://localhost:27017/accounts',{useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('Connected to accoounts database.'))
 .catch((err)=> console.log(err));
 //EJS
