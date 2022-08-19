@@ -2,11 +2,11 @@
 <h1>Register</h1>
 <%- include ('./partials/messages') %>
 <form action="/users/register" method="POST">
-<div>
+  <div>
     <label for="name">Name</label>
     <input class="text-box" name="name" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>" />
-</div>
-<div>
+  </div>
+  <div>
     <label for="email">Email</label>
     <input class="text-box" type="email" name="email" placeholder="Enter Email" value="<%= typeof email != 'undefined' ? email : '' %>"/>
   </div>
@@ -22,5 +22,5 @@
     Register
   </button>
 </form>
-<p >Have An Account? <a href="/users/login">Login</a></p>
+  <p >Have An Account? <a href="/users/login">Login</a></p>
 </div>
