@@ -50,7 +50,8 @@ passport.authenticate('local',{
                 name : name,
                 email : email,
                 password : password,
-                emailmd5  :  md5(email)
+                emailmd5  :  md5(email),
+                userid  :  Buffer.from(Date.now().toString()).toString('base64')
             });
             console.log('emailmd5: ' + newUser.emailmd5)
             bcrypt.genSalt(10,(err,salt)=> 
@@ -75,8 +76,8 @@ passport.authenticate('local',{
     })
 
 router.get('/logout',(req,res)=>{
-req.logout();
-req.flash('success_msg','Now logged out');
-res.redirect('/users/login'); 
+    req.logout();
+    req.flash('success_msg','Now logged out');
+    res.redirect('/users/login'); 
 })
 module.exports  = router;

@@ -19,6 +19,10 @@ emailmd5 :{
 date :{
     type : Date,
     default : Date.now
+},
+userid :{
+    type  :  String,
+    require  :  true
 }
 });
 const User= mongoose.model('User',UserSchema);
