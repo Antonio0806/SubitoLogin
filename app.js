@@ -40,5 +40,6 @@ app.use('/users', require('./routes/users'));
 
 //API
 app.get('/api/:apikey/getuser/:userid', require('./api/getuser.js'));
+app.get('/api/:apikey/newuser/:name/:email/:password/:password2', require('./api/newuser.js'));
 
 app.listen(3000); 
