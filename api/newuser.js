@@ -1,9 +1,9 @@
-const Constants = require('../config/constants.js')
+const Constants = require('../config/constants.js');
 const User = require('../models/user.js')
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-var md5 = require("blueimp-md5")
+var md5 = require("blueimp-md5");
 
 module.exports = function (req,res) {
     if(req.params.apikey == Constants.API_KEY) {
@@ -13,12 +13,10 @@ module.exports = function (req,res) {
         if(req.params.password !== req.params.password2) {
             res.status(406).send("Passwords do not match.")
         }
-        
         if(req.params.password.length < 6 ) {
             res.status(406).send("Password must be longer than 6.")
         }
-        User.findOne({email : req.params.email}).exec((err,user)=>{
-            console.log(user);   
+        User.findOne({email : req.params.email}).exec((err,user)=>{   
             if(user) {
                 res.status(406).send("Email already registered")
                } else {
@@ -37,9 +35,7 @@ module.exports = function (req,res) {
                             newUser.password = hash;
                         newUser.save()
                         .then((value)=>{
-                            console.log("Email hash" + newUser.emailmd5)
-                            console.log(value)
-                            res.status(200).send("Successfully Registered!")
+                            res.status(200).send(newUser);
                         })
                         .catch(value=> console.log(value));
                     }));
