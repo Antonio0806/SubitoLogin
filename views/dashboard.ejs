@@ -1,4 +1,4 @@
-<style>
+<!--<style>
   h3, h4 {
     color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -11,5 +11,30 @@
      <li><h3>Username: </h3><h4><%= user.name %></h4></li>
      <li><h3>User email: </h3><h4><%= user.email %></h4></li>
      <li><h3>Date of creation: </h3><h4><%= user.date %></h4></li>
-    </ul>
+    </ul> -->
+<style>
+#dashboard-container {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 85%;
+  padding: 20px;
+  width: 95%;
+  text-align: center;
+}
+h3, h4 {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+  }
+</style>
+
+    <div id="dashboard-container">
+        <div class="title">Dashboard</div>
+        <ul>
+          <li><h3>Avatar: </h3><img src="https://www.gravatar.com/avatar/<%= user.emailmd5 %>>?d=retro"></img></li> 
+          <li><h3>Username: </h3><h4><%= user.name %></h4></li>
+          <li><h3>User email: </h3><h4><%= user.email %></h4></li>
+          <li><h3>Date of creation: </h3><h4><%= user.date %></h4></li>
+         </ul>
+    </div>
 
