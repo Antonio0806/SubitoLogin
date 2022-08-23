@@ -1,26 +1,25 @@
-<div class="form" style="height: 155px;">
 <h1>Register</h1>
 <%- include ('./partials/messages') %>
-<form action="/users/register" method="POST">
-  <div>
-    <label for="name">Name</label>
-    <input class="text-box" name="name" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>" />
+<div class="form">
+  <div class="title">Welcome</div>
+  <div class="subtitle">Let's create your account!</div>
+  <form action="/users/register" method="POST">
+  <div class="input-container ic1">
+    <input class="text-box" type="text" name="name" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>" />
+    <div class="cut"></div>
   </div>
-  <div>
-    <label for="email">Email</label>
+  <div class="input-container ic2">
     <input class="text-box" type="email" name="email" placeholder="Enter Email" value="<%= typeof email != 'undefined' ? email : '' %>"/>
+    <div class="cut"></div>
   </div>
-  <div>
-    <label for="password">Password</label>
+  <div class="input-container ic2">
     <input class="text-box" type="password" name="password" placeholder="Create Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+    <div class="cut cut-short"></div>
   </div>
-  <div>
-    <label for="password2">Confirm Password</label>
-    <input class="text-box" type="password" name="password2" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>"/>
+  <div class="input-container ic2">
+    <input class="text-box" type="password2" name="password2" placeholder="Repeat password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+    <div class="cut cut-short"></div>
   </div>
-  <button type="submit" class="btn btn-primary btn-block">
-    Register
-  </button>
+  <button type="text" class="submit">submit</button>
 </form>
-  <p >Have An Account? <a href="/users/login">Login</a></p>
 </div>
