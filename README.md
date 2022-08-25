@@ -14,6 +14,6 @@ The `getuser` call returns all the information that is stored in the database ab
 The `newuser` call has the following syntax: `http(s)://ip-address:port/api/API_KEY/newuser/:name/:email/:password/:password2/.`
 The `newuser` call essentially registers a new user with the following information. The newuser call has to be provided with all information that a hypothetical user would be typing into a registering form. This call returns various status codes depending on the errors occuring during the registration process. 
 ## TODO
-1. Add email verification.
+1. Add email verification. <= DONE
 2. Add some kind of developer portal for API.
 3. Add two factor authentication.
