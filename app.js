@@ -6,7 +6,8 @@ const expressEjsLayout = require('express-ejs-layouts')
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require("passport");
-var md5 = require("blueimp-md5")
+var md5 = require("blueimp-md5");
+
 //passport config:
 require('./depends_config/passport')(passport)
 //mongoose
@@ -41,5 +42,8 @@ app.use('/users', require('./routes/users'));
 //API
 app.get('/api/:apikey/getuser/:userid', require('./api/getuser.js'));
 app.get('/api/:apikey/newuser/:name/:email/:password/:password2', require('./api/newuser.js'));
+
+//email-verification
+app.get('/verify/:token/:emailmd5', require('./api/email_verify.js'));
 
 app.listen(3000); 

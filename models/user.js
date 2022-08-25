@@ -20,6 +20,10 @@ date :{
     type : Date,
     default : Date.now
 },
+isVerified :{
+    type : Boolean,
+    default : false
+},
 userid :{
     type  :  String,
     require  :  true

@@ -4,6 +4,16 @@ const User = require("../models/user");
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 var md5 = require("blueimp-md5")
+const nodemailer = require('nodemailer');
+const jwt = require('jsonwebtoken')
+const config = require('../config/constants.js')
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: config.EMAIL_ADDRESS,
+        pass: config.EMAIL_PASSWORD
+    }
+});
 
 router.get('/login',(req,res)=>{
     res.render('login');
@@ -53,7 +63,25 @@ passport.authenticate('local',{
                 emailmd5  :  md5(email),
                 userid  :  Buffer.from(Date.now().toString()).toString('base64')
             });
-            console.log('emailmd5: ' + newUser.emailmd5)
+            const token = jwt.sign({
+                data: newUser.email
+                }, config.JWT_SECRET, { expiresIn: '10m' }  
+            );    
+            const mailConfigurations = {
+  
+                from: config.EMAIL_ADDRESS,
+              
+                to: newUser.email,
+              
+                subject: 'Email Verification',
+                  
+                text: `Howdy! You have recently registered on our website!
+                       Please click on the link below to verify your email.
+                       http://localhost:3000/verify/${token}/${emailmd5} 
+                       Thanks`
+                  
+            }; 
+//          console.log(`${token}/${newUser.emailmd5}`)
             bcrypt.genSalt(10,(err,salt)=> 
             bcrypt.hash(newUser.password,salt,
                 (err,hash)=> {
@@ -61,6 +89,12 @@ passport.authenticate('local',{
                         newUser.password = hash;
                     newUser.save()
                     .then((value)=>{
+                        transporter.sendMail(mailConfigurations, function(error, info){
+                            if (error) throw Error(error);
+                            console.log('Email Sent Successfully');
+                            console.log(info);
+                        });
+
                         console.log("Email hash" + newUser.emailmd5)
                         console.log(value)
                         
