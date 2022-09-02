@@ -3,17 +3,9 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-var md5 = require("blueimp-md5")
-const nodemailer = require('nodemailer');
-const jwt = require('jsonwebtoken')
+var md5 = require("blueimp-md5");
+const jwt = require('jsonwebtoken');
 const config = require('../config/constants.js')
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: config.EMAIL_ADDRESS,
-        pass: config.EMAIL_PASSWORD
-    }
-});
 
 router.get('/login',(req,res)=>{
     res.render('login');
@@ -67,21 +59,8 @@ passport.authenticate('local',{
                 data: newUser.email
                 }, config.JWT_SECRET, { expiresIn: '10m' }  
             );    
-            const mailConfigurations = {
-  
-                from: config.EMAIL_ADDRESS,
-              
-                to: newUser.email,
-              
-                subject: 'Email Verification',
-                  
-                text: `Howdy! You have recently registered on our website!
-                       Please click on the link below to verify your email.
-                       http://localhost:3000/verify/${token}/${emailmd5} 
-                       Thanks`
-                  
-            }; 
-//          console.log(`${token}/${newUser.emailmd5}`)
+
+            console.log(`${token}/${newUser.emailmd5}`)
             bcrypt.genSalt(10,(err,salt)=> 
             bcrypt.hash(newUser.password,salt,
                 (err,hash)=> {
