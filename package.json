@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Antonio0806/SSubito-account-system#readme",
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.154.0",
     "bcrypt": "^5.0.1",
     "blueimp-md5": "^2.19.0",
     "body-parser": "^1.18.3",
@@ -37,7 +38,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.5.1",
     "morgan": "^1.9.1",
-    "nodemailer": "^6.7.8",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.5.0",
