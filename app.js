@@ -38,12 +38,13 @@ app.use((req,res,next)=> {
 //Routes
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
-
 //API
 app.get('/api/:apikey/getuser/:userid', require('./api/getuser.js'));
 app.get('/api/:apikey/newuser/:name/:email/:password/:password2', require('./api/newuser.js'));
-
+app.get('/api/:apikey/auth/:email/:password', require('./api/auth.js'))
 //email-verification
 app.get('/verify/:token/:emailmd5', require('./api/email_verify.js'));
+//oAuth2 requests
+
 
 app.listen(3000); 

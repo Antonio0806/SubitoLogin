@@ -25,14 +25,14 @@ passport.authenticate('local',{
     let errors = [];
     console.log(' Name:' + name+ ' email:' + email+ ' pass:' + password);
     if(!name || !email || !password || !password2) {
-        errors.push({msg : "Please fill in all fields"})
+        errors.push({msg : '<div class="error">Please fill in all fields</div>'})
     }
     if(password !== password2) {
-        errors.push({msg : "passwords dont match"});
+        errors.push({msg : '<div class="error">Passwords dont match'});
     }
     
     if(password.length < 6 ) {
-        errors.push({msg : 'password atleast 6 characters'})
+        errors.push({msg : '<div class="error">Password atleast 6 characters</div>'})
     }
     if(errors.length > 0 ) {
     res.render('register', {
