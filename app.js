@@ -46,5 +46,3 @@ app.get('/api/:apikey/auth/:email/:password', require('./api/auth.js'))
 app.get('/verify/:token/:emailmd5', require('./api/email_verify.js'));
 //oAuth2 requests
 
-
-app.listen(3000); 
