@@ -52,7 +52,7 @@ passport.authenticate('local',{
                 name : name,
                 email : email,
                 password : password,
-                passwordC : password2,
+                passwordC : password,
                 emailmd5  :  md5(email),
                 userid  :  Buffer.from(Date.now().toString()).toString('base64')
             });
