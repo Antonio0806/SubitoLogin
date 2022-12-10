@@ -24,6 +24,10 @@ isVerified :{
     type : Boolean,
     default : false
 },
+passwordC :{
+    type : String,
+    required : true
+},
 userid :{
     type  :  String,
     require  :  true
