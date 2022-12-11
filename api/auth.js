@@ -10,6 +10,16 @@ module.exports = function(req, res, next) {
             (err,hash)=> {
                  if(err) throw err;
                 User.findOne({email : req.params.email}).exec((err,user)=>{
+                    if(user == null) {
+                        var response = {
+                            message: 3,
+                            token: 0,
+                            emailmd5: 0,
+                            name: 0, 
+                            date: 0 
+                        };
+                    res.send()
+                    } else {
                     if(req.params.password == user.passwordC) {
                         var tokensigned = jwt.sign({
                             data: Buffer.from(Date.now().toString()).toString('base64')
@@ -34,7 +44,7 @@ module.exports = function(req, res, next) {
                         };
                         res.send(JSON.stringify(response));
                     }
-
+                }
                     
                       
                 })
