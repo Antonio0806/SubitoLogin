@@ -31,6 +31,10 @@ passwordC :{
 userid :{
     type  :  String,
     require  :  true
+},
+integrations :{
+    type  :  String,
+    require  :  false
 }
 });
 const User= mongoose.model('User',UserSchema);

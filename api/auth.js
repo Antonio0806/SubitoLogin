@@ -44,11 +44,8 @@ module.exports = function(req, res, next) {
                         };
                         res.send(JSON.stringify(response));
                     }
-                }
-                    
-                      
-                })
-
+                }          
+            })
         }));      
     } else {
         res.status(403).send('Wrong API key.')
