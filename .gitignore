@@ -132,3 +132,8 @@ dist
 #IDE related files and folders
 
 .idea
+
+#keys
+
+./config/privatekey.pem
+./config/publickey.pem
