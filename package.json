@@ -5,11 +5,11 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "startdev": "node app.js"
+    "startdev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Antonio0806/SSubito-account-system.git"
+    "url": "git+https://github.com/Antonio0806/SubitoLogin.git"
   },
   "keywords": [
     "login",
@@ -19,9 +19,9 @@
   "author": "Antonio0806",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Antonio0806/SSubito-account-system/issues"
+    "url": "https://github.com/Antonio0806/SubitoLogin/issues"
   },
-  "homepage": "https://github.com/Antonio0806/SSubito-account-system#readme",
+  "homepage": "https://github.com/Antonio0806/SubitoLogin#readme",
   "dependencies": {
     "@aws-sdk/client-ses": "^3.154.0",
     "bcrypt": "^5.0.1",
