@@ -35,6 +35,10 @@ userid :{
 integrations :{
     type  :  String,
     require  :  false
+},
+perms :{
+    type  :  String,
+    require  :  true
 }
 });
 const User= mongoose.model('User',UserSchema);

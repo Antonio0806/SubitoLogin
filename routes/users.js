@@ -54,6 +54,7 @@ passport.authenticate('local',{
                 password : password,
                 passwordC : password,
                 emailmd5  :  md5(email),
+                perms  :  false,
                 userid  :  Buffer.from(Date.now().toString()).toString('base64')
             });
             const token = jwt.sign({
